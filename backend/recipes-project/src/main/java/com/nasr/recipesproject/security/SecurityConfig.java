@@ -48,6 +48,7 @@ public class SecurityConfig {
         CustomAuthenticationFilter authenticationFilter = new CustomAuthenticationFilter(authenticationManager);
         authenticationFilter.setFilterProcessesUrl("/api/login");
         authenticationFilter.setPostOnly(true);
+        authenticationFilter.setAuthenticationFailureHandler(new FailureHandler());
 
 
         return http.authorizeHttpRequests(customize -> {
