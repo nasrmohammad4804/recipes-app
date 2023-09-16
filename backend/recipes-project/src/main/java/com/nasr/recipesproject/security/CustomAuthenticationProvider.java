@@ -39,9 +39,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
                     userDetails,password,null
             );
         } catch (Exception e) {
-            throw new BusinessException(
-                    "your user information is not valid",
-                    UNAUTHORIZED);
+            throw new AuthenticationException("your user information is not valid") {};
 
         }
 

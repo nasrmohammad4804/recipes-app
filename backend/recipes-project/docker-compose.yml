@@ -29,7 +29,7 @@ services:
       - db_volume:/var/lib/postgresql/data/
 
   recipes-service:
-    image: "09031261399/recipes-app:1.0.0"
+    image: "09031261399/recipes-app:1.0.1"
     container_name: app
     depends_on:
       - db
