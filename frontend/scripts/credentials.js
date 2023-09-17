@@ -90,14 +90,17 @@ signupForm.addEventListener("submit", (e) => {
   
   let statusCode;
   fetch("http://127.0.0.1:8080/sign-up",option)
-  .then(res =>  res.json())
+  .then(res =>  {
+
+    statusCode=res.status;
+    return res.json();
+  })
   .then(data => {
 
     if(statusCode!='201')
       throw new Error(data.message);
 
-    
-    //redirect to homepage
+    location.replace("http://127.0.0.1:5500/pages/home.html");
   })
   .catch(error => {
     signupFormServerError.style.display='block';
@@ -134,7 +137,7 @@ signinForm.addEventListener("submit", (e) => {
    if(statusCode!='200')
    throw new Error(data.message);
 
-   //redirect to home page
+   location.replace("http://127.0.0.1:5500/pages/home.html");
   })
   .catch(err => {
     
