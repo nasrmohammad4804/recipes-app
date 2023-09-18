@@ -52,7 +52,6 @@ body {
 }
 .aside__recipes__image--big {
   height: 60%;
-  background-image: url("../images/salad2 1.png");
 }
 .aside__recipes__image--small {
   height: 40%;
@@ -61,7 +60,6 @@ body {
 .aside__recipes__image--small__image {
   width: 50%;
   border-radius: 5px;
-  background-image: url("../images/salad2 1.png");
 }
 
 .main {
