@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Recipes</title>
+    <link rel="stylesheet" href="../styles/createRecipes.css">
+    <script src="../scripts/createRecipes.js" defer></script>
+</head>
+<body>
+
+    <main class="main">
+        <form class="main__form" action="">
+            <h1 class="main__form__heading">Create new recipe</h1>
+            <div class="main__form__title">
+                <input type="text" class="main__form__title__input main__form__input" placeholder="Title">
+                <div class="main__form__title__error"></div>
+            </div>
+
+            <div class="main__form__summary">
+                <input type="text" class="main__form__summary__input main__form__input" placeholder="Summary">
+                <div class="main__form__summary__error"></div>
+            </div>
+
+            <div class="main__form__image">
+                <input type="file" class="main__form__image__input" placeholder="Image">
+                <div class="main__form__image__error"></div>
+            </div>
+
+            <div class="main__form__description">
+                <textarea class="main__form__description__input" name="" id="" cols="30" rows="10" placeholder="Description"></textarea>
+                <div class="main__form__image__error"></div>
+            </div>
+
+            <input class="main__form__input main__form__input--blue" type="submit" value="Add Recipe">
+        </form>
+    </main>
+</body>
+</html>

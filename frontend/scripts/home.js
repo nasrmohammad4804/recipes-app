@@ -9,6 +9,13 @@ let personEmail = document.querySelector(".aside__email");
 let recipesMenu = document.querySelector(".main__menu");
 let recipesItem = document.querySelector(".main__recipes");
 
+let theme = document.querySelector('.aside__theme');
+
+theme.addEventListener('change',e => {
+    
+    document.body.classList.toggle('dark-theme');
+});
+
 const option = {
   method: "GET",
   headers: {

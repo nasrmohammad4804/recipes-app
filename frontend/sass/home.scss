@@ -1,6 +1,7 @@
 @import 'helper';
 @import 'flex';
 @import 'variables';
+@import 'fonts';
 
 *{
     box-sizing: border-box;
@@ -10,6 +11,13 @@ body{
     @extend %body;
     @extend %d-flex;
     font-family: 'Roboto';
+    background-color: white;
+    color: black;
+}
+
+.dark-theme{
+    background-color:#333;
+    color:white;
 }
 .aside{
 
@@ -53,6 +61,7 @@ body{
                 background-color:black;
                 
             }
+        
         }
 
         &__slider{
