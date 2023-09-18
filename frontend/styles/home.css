@@ -126,6 +126,7 @@ body {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
   border-radius: 4px;
   cursor: pointer;
+  height: 250px;
 }
 .main__recipes__item__image {
   height: 150px;
@@ -133,6 +134,7 @@ body {
 }
 .main__recipes__item__content {
   padding-inline: 10px;
+  overflow: auto;
 }
 .main__recipes__item__content__title {
   margin-top: 0px;

@@ -1,0 +1,93 @@
+@import 'helper';
+@import 'flex';
+@import 'variables';
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    @extend %body;
+    @extend %d-flex;
+    font-family: 'Roboto';
+    color: $customGrey;
+    background-color: rgb(128, 128, 128,.1);
+}
+
+.aside{
+    width: 33%;
+    height: 100vh;
+    position: sticky;
+
+    &__recipes{
+        
+        @extend %d-flex;
+        @extend %flex-column;
+        background-color:rgb(243, 225, 202);
+        box-shadow: 4px 4px 4px 4px #00000040;
+        height: 100%;
+        border-radius: 5px;
+        gap: 24px;
+
+
+        &__image{
+            width: 100%;
+            height: 50% ;
+            border-radius: 5px;
+            &--big{
+                height: 60%;
+                background-image: url('../images/salad2\ 1.png');
+                @extend %background-image;
+            }
+
+            &--small{
+                @extend %d-flex;
+                height: 40%;
+                gap: 25px;
+
+                &__image{
+                    width: 50%;
+                    border-radius: 5px;
+                    background-image: url('../images/salad2\ 1.png');
+                    @extend %background-image;
+                }
+            }
+        }
+    }
+}
+
+.main{
+    width: 60%;
+    padding: 30px;
+
+
+    &__recipes{
+
+        @extend %d-flex;
+        @extend %flex-column;
+        gap: 30px;
+
+        &__title{
+
+            &::before{
+                content: "Title: ";
+                @extend %-recipes-before-content;
+            }
+        }
+
+        &__summary{
+            &::before{
+                content: "Summary: ";
+                @extend %-recipes-before-content;
+            }
+        }
+
+        &__detail{
+            &::before{
+                content: "Description: ";
+                @extend %-recipes-before-content;
+            }
+        }
+    }
+
+}

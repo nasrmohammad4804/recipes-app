@@ -8,3 +8,16 @@
     margin-block-start: 5px;
     color: crimson;
 }
+
+
+%background-image{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+%-recipes-before-content{
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+}
