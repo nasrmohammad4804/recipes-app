@@ -13,25 +13,30 @@
         <form class="main__form" action="">
             <h1 class="main__form__heading">Create new recipe</h1>
             <div class="main__form__title">
-                <input type="text" class="main__form__title__input main__form__input" placeholder="Title">
+                <input type="text" class="main__form__title__input main__form__input" name="title" placeholder="Title" required>
                 <div class="main__form__title__error"></div>
             </div>
 
             <div class="main__form__summary">
-                <input type="text" class="main__form__summary__input main__form__input" placeholder="Summary">
+                <input type="text" class="main__form__summary__input main__form__input" name="summary" placeholder="Summary" required>
                 <div class="main__form__summary__error"></div>
             </div>
 
             <div class="main__form__image">
-                <input type="file" class="main__form__image__input" placeholder="Image">
+                <input type="file" class="main__form__image__input" name="file" placeholder="Image" required>
                 <div class="main__form__image__error"></div>
             </div>
 
             <div class="main__form__description">
-                <textarea class="main__form__description__input" name="" id="" cols="30" rows="10" placeholder="Description"></textarea>
+                <textarea class="main__form__description__input" name="detail" id="" cols="30" rows="10" placeholder="Description" required></textarea>
                 <div class="main__form__image__error"></div>
             </div>
 
+            <div class="main__form__categories">
+                <select class="main__form__categories__drop-down" name="categories" id="recipes-categories" required>
+                    <option  disabled selected hidden>categories</option>
+                </select>
+            </div>
             <input class="main__form__input main__form__input--blue" type="submit" value="Add Recipe">
         </form>
     </main>

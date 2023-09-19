@@ -103,12 +103,26 @@ body{
         margin-block-end: 80px;
     }
 
+    
+
     &__menu{
 
         @extend %d-flex;
-        @extend %align-content-start;
+        position: relative;
         margin-block-end: 40px;
         gap: 24px;
+
+        
+        &__create-recipe{
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding:10px 15px;
+            background-color: $customBlue;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
 
         &__item{
             width: 10%;

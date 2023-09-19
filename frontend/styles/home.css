@@ -8,7 +8,7 @@ body {
   display: flex;
 }
 
-.main__recipes, .main__menu {
+.main__recipes {
   align-content: flex-end;
 }
 
@@ -102,8 +102,19 @@ body {
   margin-block-end: 80px;
 }
 .main__menu {
+  position: relative;
   margin-block-end: 40px;
   gap: 24px;
+}
+.main__menu__create-recipe {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px 15px;
+  background-color: #2A41CB;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
 }
 .main__menu__item {
   width: 10%;

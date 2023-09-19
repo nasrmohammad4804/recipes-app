@@ -11,6 +11,13 @@ let recipesItem = document.querySelector(".main__recipes");
 
 let theme = document.querySelector('.aside__theme');
 
+let createRecipeLink = document.getElementById('create-recipe-link');
+
+
+createRecipeLink.addEventListener('click', e => {
+  location.href="http://127.0.0.1:5500/pages/createRecipes.html";
+})
+
 theme.addEventListener('change',e => {
     
     document.body.classList.toggle('dark-theme');
@@ -68,9 +75,11 @@ function showRecipesCategories(recipesCategoriesPromise) {
       element.style.textAlign = "center";
 
       recipesMenu.append(element);
+
     });
   });
 }
+
 
 function createDefaultRecipesCategories(parentClassName) {
   let element = document.createElement("div");

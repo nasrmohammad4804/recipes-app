@@ -40,6 +40,19 @@ body {
   border-radius: 16px;
   resize: vertical;
 }
+.main__form__categories__drop-down {
+  display: block;
+  width: 100%;
+  padding-block: 24px;
+  padding-inline-start: 38px;
+  background-color: #F5F6F8;
+  border: 0px;
+  border-radius: 16px;
+  color: #848A8D;
+}
+.main__form__categories__drop-down option:not(:first-of-type) {
+  color: black;
+}
 .main__form__image__input {
   color: transparent;
   width: 100%;
@@ -91,4 +104,32 @@ body {
 .main__form__input::placeholder {
   font-size: 14px;
   color: #848A8D;
+}
+.main__form__movement {
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  animation: linear;
+  animation-name: run;
+  animation-duration: 3s;
+  animation-delay: 0.25s;
+  background-color: grey;
+  text-align: center;
+  padding-block: 10px;
+  padding-inline: 10px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+.main__form__movement--successful {
+  background-color: green;
+  color: white;
+}
+
+@keyframes run {
+  50% {
+    left: 50%;
+  }
+  100% {
+    left: 100%;
+  }
 }/*# sourceMappingURL=createRecipes.css.map */

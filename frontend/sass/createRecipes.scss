@@ -45,6 +45,24 @@ body{
             }
         }
 
+        &__categories{
+
+            &__drop-down{
+                display: block;
+                width: 100%;
+                padding-block: 24px;
+                padding-inline-start: 38px;
+                background-color: $customWhite;
+                border: 0px;
+                border-radius: 16px;
+                color: #848A8D;
+
+                option:not(:first-of-type){
+                    color: black;
+                }
+            }
+        }
+
         &__image{
             
             &__input{
@@ -110,5 +128,41 @@ body{
                 color: #848A8D;
             }
         }
+
+
+
+        &__movement{
+
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+            animation: linear;
+            animation-name: run;
+            animation-duration: 3s;
+            animation-delay: .25s;
+            background-color: grey;
+            text-align: center;
+            padding-block: 10px;
+            padding-inline: 10px;
+            border-radius: 5px;
+            border: 2px solid black;
+
+            &--successful{
+                background-color: green;
+                color: white;
+            }
+        }
     }
+
+    
 }
+@keyframes run {
+
+
+    50% {
+      left: 50%;
+    }
+    100% {
+      left: 100%;    
+    }
+  }
