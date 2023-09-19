@@ -114,6 +114,7 @@ body {
   background-color: #2A41CB;
   color: white;
   border-radius: 6px;
+  font-size: 20px;
   cursor: pointer;
 }
 .main__menu__item {

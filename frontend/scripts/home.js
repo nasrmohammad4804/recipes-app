@@ -2,6 +2,8 @@ let userInfo;
 let recipesCategories;
 let recipesInfos;
 
+let menuItemIdClicked='menu-All';
+
 let personImage = document.querySelector(".aside__avatar");
 let personName = document.querySelector(".aside__name");
 let personEmail = document.querySelector(".aside__email");
@@ -13,15 +15,6 @@ let theme = document.querySelector('.aside__theme');
 
 let createRecipeLink = document.getElementById('create-recipe-link');
 
-
-createRecipeLink.addEventListener('click', e => {
-  location.href="http://127.0.0.1:5500/pages/createRecipes.html";
-})
-
-theme.addEventListener('change',e => {
-    
-    document.body.classList.toggle('dark-theme');
-});
 
 const option = {
   method: "GET",
@@ -44,6 +37,96 @@ Promise.all(promises)
     showAllRecipes(allRecipes);
   })
   .catch((err) => {});
+
+recipesMenu.addEventListener('click', e => {
+  let target = e.target;
+
+  let defaultItemClassName='main__menu__item--default';
+  let itemClassName = 'main__menu__item';
+
+
+  if(target.classList.contains(itemClassName)){
+    let categoryId=target.id.replace('menu-','');
+    showRecipesByCategoryId(categoryId);
+
+    target.style.borderBlockEnd='2px solid black';
+    
+    document.getElementById(menuItemIdClicked)
+    .style.borderBlockEnd='0px';
+
+    menuItemIdClicked=target.id;
+  }
+
+  else if(target.classList.contains(defaultItemClassName)){
+    
+    showRecipesByCategoryId();
+
+    target.style.borderBlockEnd='2px solid black';
+    
+    document.getElementById(menuItemIdClicked)
+    .style.borderBlockEnd='0px';
+
+    menuItemIdClicked=target.id;
+  }
+
+});
+
+function showRecipesByCategoryId(categoryId){
+
+  let url = `http://127.0.0.1:8080/recipes/all`;
+
+  if(categoryId)
+    url+=`?recipesCategoryId=${categoryId}`;
+
+    let statusCode;
+
+   fetch(url,option)
+   .then(response => {
+      statusCode=response.status;
+      return response.json();
+   })
+   .then(response => {
+
+      if(statusCode!='200')
+        throw new Error(response.message);
+
+        let parent = "main__recipes";
+        recipesInfos = response.data;
+
+        return new Promise((resolve, reject) => {
+          try {
+            
+            recipesItem.textContent='';
+            recipesInfos.forEach((info) => {
+              addRecipesItem(info, parent);
+            });
+  
+            resolve();
+          } catch (err) {
+            reject("can't to create element with dom for recipes");
+          }
+        });
+
+   })
+   .then(() => {
+    addEventListenerForRecipes();
+  })
+   .catch(err => {
+    if(statusCode=='403')
+      location.replace("http://127.0.0.1:5500/pages/credentials.html");
+   })
+}
+
+createRecipeLink.addEventListener('click', e => {
+  location.href="http://127.0.0.1:5500/pages/createRecipes.html";
+})
+
+theme.addEventListener('change',e => {
+    
+    document.body.classList.toggle('dark-theme');
+});
+
+
 
 function showUserInfo(userInfoPromise) {
   userInfoPromise.json().then((response) => {
